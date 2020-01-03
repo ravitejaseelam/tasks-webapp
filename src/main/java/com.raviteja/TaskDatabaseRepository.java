@@ -31,7 +31,7 @@ public class TaskDatabaseRepository implements TaskRepository{
     @Override
     public List<Task> display() throws SQLException, ParseException {
 
-        String query="SELECT * FROM task4 ";
+        String query="SELECT * FROM task4 ORDER BY DUEDATE ASC";
         ResultSet searchList=stmt.executeQuery(query);
         List<Task> displayList= new ArrayList<Task>() ;
         while (searchList.next())

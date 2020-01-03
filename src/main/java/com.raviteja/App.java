@@ -8,6 +8,7 @@ public class App {
 
     public static void main(String[] args) throws ParseException, SQLException {
       TaskManager tm =new TaskManager();
+      SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
       int flag=0;
         while (true) {
             System.out.println("Select one of the below task");
@@ -35,8 +36,7 @@ public class App {
                         Date date = new Date();
                         System.out.println("Enter Due Date in (DD/MM/YYYY) format");
                         String sdueDate = sc.nextLine();
-                        SimpleDateFormat sdfo = new SimpleDateFormat("dd/MM/yyyy");
-                        Date dueDate = sdfo.parse(sdueDate);
+                        Date dueDate = dateFormat.parse(sdueDate);
                         Status status = Status.valueOf("Assigned");
                         tm.add(name, description, date, status, dueDate);
                         System.out.println(".............Added...............");
@@ -90,7 +90,7 @@ public class App {
                                System.out.println("ID:" + obj.id);
                                System.out.println("Name:" + obj.name);
                                System.out.println("Description:" + obj.description);
-                               System.out.println("Due date:" + obj.duedate);
+                               System.out.println("Due date:" + dateFormat.format(obj.duedate));
                                System.out.println("Status:" + obj.status);
                                System.out.println();
                                flag++;
@@ -179,8 +179,7 @@ public class App {
                                 System.out.println("ID:" + obj.id);
                                 System.out.println("Name:" + obj.name);
                                 System.out.println("Description:" + obj.description);
-                                System.out.println("Date:" + obj.date);
-                                System.out.println("Due date:" + obj.duedate);
+                                System.out.println("Due date:" +dateFormat.format(obj.duedate));
                                 System.out.println("Status:" + obj.status);
                                 System.out.println();
                                 flag++;
@@ -285,11 +284,12 @@ public class App {
         }
     }
     static void Print(List<Task> list) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         for (Task obj : list) {
             System.out.println("Id:" + obj.id);
             System.out.println("Name:" + obj.name);
             System.out.println("Description:" + obj.description);
-            System.out.println("Due date:" + obj.duedate);
+            System.out.println("Due date:" + dateFormat.format(obj.duedate));
             System.out.println("Status:" + obj.status);
             System.out.println();
         }
