@@ -28,9 +28,9 @@ public class ServletOp extends HttpServlet {
             taskManager = new TaskManager();
             List= taskManager.search(name);
         } catch (SQLException e) {
-            out.println("hxfcvmbjfx");
+            out.println(e);
         } catch (Exception e) {
-            out.println("hcvbjhgchhj");
+            out.println(e);
         }
         for (Task obj : List) {
             if (obj.id.equals(id)) {

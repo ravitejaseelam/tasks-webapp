@@ -32,9 +32,9 @@ public class Servlet extends HttpServlet {
             tm = new TaskManager();
             List=tm.display();
         } catch (SQLException e) {
-            out.println("hxfcvmbjfx");
+            out.println(e);
         } catch (Exception e) {
-            out.println("hcvbjhgchhj");
+            out.println(e);
         }
         if(List.isEmpty())
         {
