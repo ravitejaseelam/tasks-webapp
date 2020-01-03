@@ -276,7 +276,7 @@ public class App {
                     break;
 
                 default:
-                    System.out.println("Plz Enter Correct Input from (1-9)");
+                    System.out.println("Please Enter Correct Input from (1-9)");
                     System.out.println();
                     break;
 
